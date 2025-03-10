@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boolean</title>
+
+  </head>
+  <body>
+    <script>
+    true //dont use quotes like 'true' 
+    false
+
+    console.log(3>5);
+    
+    //Comparator has lower priority in JS
+
+    //equal === (recommmended) than ==
+    // not equal !== (recommmended) than !=
+
+    //if-else
+    if(true){
+      console.log('Hello');
+    }else{
+      console.log('World');
+    }
+
+    const age = 15;
+    if(age > 19){
+      console.log('Not eligible');
+    }else if (age >= 10){
+      console.log('Almost eligible');
+    }else{
+      console.log('Eligible');
+    }
+
+
+    //logical operators
+    //logical has least priority than comparators in JS
+    console.log(true && true);
+    console.log(false && true); 
+
+    console.log(true || false);
+
+    console.log(!true);
+
+
+    //Truthy and Falsy
+    //Falsy values: 0, '', null, undefined, NaN (Not a Number)
+
+    if(5)
+    {
+      console.log('Truthy');
+    }else{
+      console.log('Falsy');
+    }
+
+
+    //NaN
+    console.log(5/'a');
+
+    //Ternary operator
+    const result = true ? 'truthy' : 'falsy';    //shortcuts for if-else
+    console.log(result);
+
+    const result1 = 0 ? 'truthy' : 'falsy';    //shortcuts for if-else
+    console.log(result1);
+    
+    //Guardy operator
+    false && console.log('Hello'); //if false, then it will not execute the next statement
+
+    true && console.log('Hello'); //if true, then it will execute the next statement
+
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
