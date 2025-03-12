@@ -9,17 +9,38 @@
     <button onclick="
     console.log(`Cart quantity : ${CartQuantity}`);">Show Quantity</button>
 
-    <button onclick="CartQuantity = CartQuantity + 1;
+    <button onclick="
+    if (CartQuantity > 10 ){
+      alert(`Cart is Full`);
+    }else{ CartQuantity= CartQuantity + 1;
     //CartQuantity += 1;
     //CartQuantity++;
-    console.log(`Cart quantity = ${CartQuantity}`);">Add to Cart</button>
+    console.log(`Cart quantity = ${CartQuantity}`);}">Add to Cart</button>
 
-    <button onclick="CartQuantity = CartQuantity + 2;
+    <button onclick="
+    if (CartQuantity > 10 ){
+      alert(`Cart is Full`);
+    }else{ CartQuantity = CartQuantity + 2;
     //CartQuantity += 2;
-    console.log(`Cart quantity = ${CartQuantity}`);">+2</button>
+    console.log(`Cart quantity = ${CartQuantity}`);}">+2</button>
 
-    <button onclick="CartQuantity = CartQuantity + 3;
-    console.log(`Cart quantity = ${CartQuantity}`);">+3</button>
+    <button onclick="
+    if (CartQuantity > 10 ){
+      alert(`Cart is Full`);
+    }else{ CartQuantity = CartQuantity + 3;
+    console.log(`Cart quantity = ${CartQuantity}`);}">+3</button>
+
+    <!-- Remove options -->
+    <button onclick=" if (CartQuantity - 1 < 0){
+      alert(`Cart is Empty`);}else{CartQuantity = CartQuantity - 1;}">Remove from Cart</button>
+
+    <button onclick=" if (CartQuantity - 2 < 0){
+      alert(`Cart is Empty`);}else{CartQuantity = CartQuantity - 2;}">-2</button>
+
+    <button onclick=" if (CartQuantity - 3 < 0){
+      alert(`Cart is Empty`);}else{CartQuantity = CartQuantity - 3;}">-3</button>
+
+
 
     <button onclick = " CartQuantity = 0;
     console.log(`Cart was reset`);

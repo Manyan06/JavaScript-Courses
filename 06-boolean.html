@@ -57,17 +57,22 @@
     //NaN
     console.log(5/'a');
 
-    //Ternary operator
+    //short cuts for if statements
+    //(1)Ternary operator
     const result = true ? 'truthy' : 'falsy';    //shortcuts for if-else
     console.log(result);
 
     const result1 = 0 ? 'truthy' : 'falsy';    //shortcuts for if-else
     console.log(result1);
     
-    //Guardy operator
+    //(2)Guardy operator
     false && console.log('Hello'); //if false, then it will not execute the next statement
 
     true && console.log('Hello'); //if true, then it will execute the next statement
+
+    //(3)Default operator
+    const currency = 'EUR' || 'USD'; //if EUR is not defined, then it will take USD
+    console.log(currency);
 
 
     </script>
