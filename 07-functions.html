@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+
+  </head>
+  <body>
+    <script>
+      //function lets us reuse the code
+
+
+      /*function function1(){
+        console.log(`hello`);
+        console.log(2+2);  
+      }
+
+      function1();
+      function1();
+      */
+
+      //Return = gets a value out of function
+      //Parameters = puts a value into a function
+
+      function calculateTax(cost) {
+        console.log(cost * 0.1);
+      }
+
+      calculateTax(2000);
+      calculateTax(5000);
+
+      function calculateTax1(cost1, taxPercent = 0.1) {
+        console.log(cost1 * taxPercent);
+      }
+
+      calculateTax1(2000, 0.2);
+      calculateTax1(5000);
+
+      //Add default value to avoid error in calculateTax1
+        
+      
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
