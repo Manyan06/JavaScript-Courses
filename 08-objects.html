@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+
+  </head>
+  <body>
+    <script>
+
+      //make our code more organised
+      // let us use and group multiple values together
+     const product = {
+      name : `socks`,
+      price : 10,
+     } ;
+     console.log(product);
+     console.log(typeof product);  //object
+     console.log(product.name);
+     console.log(product.price);
+     console.log(product.notExist);
+
+     product.name = `cotton socks`;
+     console.log(product);
+
+     product.newProperty = true;
+     console.log(product);
+
+     delete product.newProperty
+     console.log(product);
+
+      //Nested Objects
+     const product2 = {
+      name : `shirt`,
+      [`delivery-time`] : `2 days`,
+      rating:{
+      stars: 4.5,
+    count:87},
+    fun: function function1() {
+      console.log(`function inside object`); //function inside an object = Method
+    }
+     } ;
+     console.log(product2);
+
+     //Bracket Notation - lets us use properties that don't work with dot notation
+     console.log(product2[`name`]);
+     console.log(product2[`delivery-time`]);
+
+     //Accessing Nested Objects
+     console.log(product2.rating.stars);
+     console.log(product2.rating.count);
+
+      //Calling a function inside an object
+      product2.fun();
+
+      console.log(typeof console); //object
+      console.log(typeof console.log); //function
+      
+      Math.random(); //Example
+      // Object + Function = Method
+
+
+      //We use JSON - when we send data between computers & when we store data
+      //JSON - JavaScript Object Notation = similar to java but with less features
+      //Do not support functions
+      //Its more universal (understood by almost all programming languages)
+
+      console.log(JSON.stringify(product2)); //converts object to JSON
+      console.log( typeof JSON.stringify(product2));  //string
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString)); //converts JSON to object
+
+      //localStorage - save values more permanently
+      //(varialbles are temporary) - close/refresh pg = variables are lost
+
+      //null VS undefined
+      //null = intentionally want something to be empty
+      //undefined = unintentionally empty
+
+      //AutoBoxing - JS automatically converts primitive data types to objects
+      //here, hello is considered as special object
+      console.log(`hello`.length); //5
+      console.log(`hello`.toUpperCase()); //HELLO
+
+      const object1 = {      //copy by reference
+        message: 'hello'
+      };
+
+      // object1 and Object2 have the same reference point
+      const object2 = object1;
+      console.log(object2); //hello
+      
+
+      object1.message = 'Good job!';
+      console.log(object1);
+
+      console.log(object2); //Good job!
+
+      const object3 = {
+        message: 'Good job!'
+      };
+
+      //objects can't be compared directly
+      //It compares the references, and not the values inside the object
+      console.log(object3 === object1); //false
+      console.log(object3 === object2); //false
+      console.log(object2 === object1); //true
+
+      const object4 = {
+        message1: 'Good job!',
+        price: 799
+      };
+
+      //const message1 = object4.message1;  OR
+      const {message1, price} = object4; //destructuring
+      console.log(message1, price); //Good job! 799
+
+      const object5 = {
+        //message2: message1  OR
+        message1,
+
+        // method: function function1() {
+        //   console.log('method');
+        // }
+        //Shorthand Method for the above line of code
+      
+        method() {
+          console.log('method')
+        }
+      };
+      
+      console.log(object5);
+      console.log(object5 === object4)
+
+      object5.method();
+
+      
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
