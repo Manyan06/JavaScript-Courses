@@ -53,6 +53,53 @@
     //camelCase = cartQuantity (Recommended)
     //kebab-case = cart-quantity (use only in html & css)
     //snake_case = cart_quantity (use only in python)
+
+
+
+      //Exercise from chapter 8 (a-d)
+    const basketball = {
+      Name: "basketball",  // use double quotes for name
+      price: 2095,
+      [`delivery-time`] : "3 days" // don't use = symbol
+    };
+
+    basketball.price = 500
+
+    console.log(basketball);
+
+
+      //define products outside the function
+      const product1 = {
+      name : "sony" , // use double quotes for name
+      price: 700
+      };
+
+      const product2 = {
+      name : "kony" , // use double quotes for name
+      price: 800
+      };
+    
+      // function to comparePrice
+      function comparePrice(product1,product2){
+        return product1.price < product2.price ? product1 : product2 ;
+      }
+
+      // fuction to check similarness
+      function isSameProduct(product1, product2) {
+        return product1.name  === product2.name && product1.price === product2.price ? true : false ;
+      }
+
+      //call function
+      let result = comparePrice(product1,product2);
+      console.log(result);
+
+      let result1 = isSameProduct(product1, product2);
+      console.log(result1);
+
+      //convert to lowercase
+      console.log("GOOD MORNING".toLowerCase());
+      // testtest
+      console.log("test".repeat(2));
     
     </script>
   </body>
