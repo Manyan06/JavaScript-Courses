@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM-Exercises</title>
+
+  </head>
+  <body>
+    <button> 9a </button>
+    <button class = 'js-nButton'> 9b </button>
+
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You choose Heads';"> Heads</button>
+
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You choose Tails';"> Tails</button>
+
+    <p class = "js-choice" ></p> 
+    
+    <input placeholder = " Text here!" class = "js-name">
+    <button onclick = "
+    const element = document.querySelector ('.js-name');
+      document.querySelector('.js-message')
+        .innerHTML = `Your name is ${element.value}`;
+        ">Submit</button>
+
+      <p class = "js-message"></p>
+
+
+    <script>
+
+      console.log(document.querySelector('button'));
+      console.log(document.querySelector('.js-nButton')
+        .innerHTML = '9b done!');
+
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
