@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+
+  </head>
+  <body>
+  <p> YouTube Subscribe Button</p>
+
+  <! -- We can also use innerText in place of innerHTML to avoid error if there is extra space in button name -->
+  
+  <button onClick = "
+    subscribe();
+
+    " class = "js-subscribe">Subscribe</button>
+
+    <p> Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+
+    <! -- clicks,keydowns = events -- >
+    <! -- onclick,onkeydown = event listener -- >
+    
+    <! -- Event Listeners -- >
+    <! -- onclick = click , onkeydown = key press , onscroll = scrolling , onmouseenter = hovering over , onmouseseleave = stop hovering over -- >
+
+    <input placeholder = " Cost here" class="js-cost" onkeydown=" handleCostKeydown(event);  ">  <! -- input = Its void tag -- >
+    <! -- Every event listener gets an event object -- >
+
+    <button onclick="
+       calculate ();
+    "> Calculate </button>
+    <p class="js-total-cost"></p>
+
+    <script>
+
+      console.log(String(25)); // converts everything to string
+      console.log('25' - 5); //If a string only contains a number, and we (-*/) => it will be converted into a number but, *ADDITION* is considered as String itself
+
+
+      // Its a shortcut. We don't have to type "window.".JavaScript will automatically add it.
+      window.document //Its an object that represents the browser
+      window.console.log('window'); //acts same as console.log
+      window.alert
+
+      function handleCostKeydown(event) {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+          calculate ();
+        }
+      }
+
+      // Algorithm
+      // 1. Get the text in the text box
+      // 2. If amount<$40,add $10
+      // 3. Display total on the page
+
+      function calculate () {
+        const inputElement = document.querySelector('.js-cost');
+        let cost = Number(inputElement.value); //here value is the syntax used, instead of HTML
+
+        //Whenever we get a value from DOM its a *string*
+        // Number - to take input as Number and not string
+
+        if(cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `Your total cost is : $${cost} ` ;
+      }
+
+
+
+      function subscribe() {
+        const buttonE = document.querySelector('.js-subscribe');
+    
+        if (buttonE.innerHTML === 'Subscribe' ){
+          buttonE.innerHTML = 'Subscribed';    
+        } else {
+          buttonE.innerHTML = 'Subscribe';
+        }
+        }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+

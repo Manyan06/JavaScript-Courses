@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM-Document Object Model</title>
+
+  </head>
+  <body>
+    <button> Hello </button>
+    <button class = "js-button"> World </button>
+
+    <script>
+
+      console.log(document.title);
+      document.title ="New Title" ;
+
+      console.log(document.title);
+
+      console.log(document.body); // html element is converted to JS element
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      //document.body.innerHTML = '<button> Good Job! </button>';
+
+
+      //method = function saved inside an object
+      //document.querySelector() = lets us get any element from the page and put it inside JS
+      console.log(document.querySelector('button'));
+      console.log(document.querySelector('button').innerHTML);
+
+      document.querySelector('button')
+        .innerHTML = 'Changed' ;
+
+      console.log(document.querySelector('.js-button'));
+      console.log(document.querySelector('.js-button')
+      .innerHTML);
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement)
+
+
+
+
+      //The document object represents/models the web page
+      // The DOM combines JS and HTML together
+      /*
+      document.body.innerHTML = "Hello" ;
+      document.title ="What" ;
+      */
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
