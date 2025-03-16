@@ -18,17 +18,27 @@
 
     <p class = "js-choice" ></p> 
     
-    <input placeholder = " Text here!" class = "js-name">
-    <button onclick = "
-    const element = document.querySelector ('.js-name');
-      document.querySelector('.js-message')
-        .innerHTML = `Your name is ${element.value}`;
-        ">Submit</button>
+    <input placeholder = " Text here!" class = "js-name"
+     onkeydown = "
+      if(event.key === 'Enter'){
+      submitB();}
+        ">
+
+      <button onclick = "
+        submitB();
+      ">Submit</button>
 
       <p class = "js-message"></p>
 
 
     <script>
+
+      function submitB(event) {
+          const element = document.querySelector ('.js-name');
+          document.querySelector('.js-message')
+            .innerHTML = `Your name is ${element.value}`;
+        }
+      
 
       console.log(document.querySelector('button'));
       console.log(document.querySelector('.js-nButton')

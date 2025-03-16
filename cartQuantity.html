@@ -47,8 +47,23 @@
     console.log(`Cart quantity : ${CartQuantity}`);
     ">Reset Cart</button>
 
+
+
+
+    <p class="js-message"></p>
+    
+
     <script>
      let CartQuantity = 0;
+     displayCartQuantity ();
+
+     // NOTE - Add update Function ...to update costs
+
+      function displayCartQuantity () {
+            document.querySelector('.js-message')
+      .innerHTML = `Cost is ${CartQuantity}`;
+      }
+
     //PascalCase = CartQuantity
     //camelCase = cartQuantity (Recommended)
     //kebab-case = cart-quantity (use only in html & css)
