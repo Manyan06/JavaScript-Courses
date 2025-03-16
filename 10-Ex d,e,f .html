@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>10-Exercises</title>
+    <style>
+
+
+    /* The word "toggle" means turn on/off. */
+    .toggle-button {
+      background-color: rgb(230, 230, 230);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-right: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+
+
+    .is-toggled {
+      color: rgb(255, 255, 255);
+      background-color: black;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <p>10d</p>
+    <!-- Concept :
+      .toggle-button = Gray background 
+      .is-toggled = Changes background to black 
+
+      Inline onclick function = 
+      1.Selects the button using document.querySelector('.js-button')
+      Inline onclick function = 1.Selects the button using document.querySelector('.js-button')
+      2.Checks if it contains the class is-toggled
+      3.If not present, it adds is-toggled (turns black)
+      4.If already present, it removes is-toggled (turns gray again) -->
+
+    <button class="toggle-button js-button" onclick =" toggleUpdate('.js-button');">Gaming</button>
+
+    <button class="toggle-button js-button1" onclick=" toggleUpdate('.js-button1'); ">Music</button>
+
+    <button class="toggle-button js-button2" onclick=" toggleUpdate('.js-button2'); ">Tech</button>
+
+    <script>
+      function toggleUpdate (selector)  {
+      let buttonE = document.querySelector(selector);
+        if(!buttonE.classList.contains('is-toggled')) {
+        buttonE.classList.add('is-toggled');
+        }else{
+        buttonE.classList.remove('is-toggled');
+        }
+      }
+
+    </script>
+  </body>
+</html>
