@@ -4,6 +4,23 @@
     <title>DOM Projects</title>
 
   </head>
+  <style>
+
+    .enter-cost{
+      padding: 6px;
+      font-size:15px;
+    }
+    .calculate {
+      color: white;
+      background-color: green;
+      padding: 9px;
+      border: none;
+    }
+    /* Give the error message a red color. */
+    .error-message {
+    color: red;
+    }
+   </style>
   <body>
   <p> YouTube Subscribe Button</p>
 
@@ -24,13 +41,16 @@
     <! -- Event Listeners -- >
     <! -- onclick = click , onkeydown = key press , onscroll = scrolling , onmouseenter = hovering over , onmouseseleave = stop hovering over -- >
 
-    <input placeholder = " Cost here" class="js-cost" onkeydown=" handleCostKeydown(event);  ">  <! -- input = Its void tag -- >
+    <input placeholder = " Cost here" class="js-cost enter-cost" onkeydown=" handleCostKeydown(event);  ">  <! -- input = Its void tag -- >
     <! -- Every event listener gets an event object -- >
 
-    <button onclick="
+    <button class = "calculate" onclick="
        calculate ();
     "> Calculate </button>
     <p class="js-total-cost"></p>
+
+        <!-- Create an element to display the error message. -->
+        <p class="js-error-message error-message"></p>
 
     <script>
 
@@ -61,6 +81,25 @@
 
         //Whenever we get a value from DOM its a *string*
         // Number - to take input as Number and not string
+
+
+        // First, reset all previous messages.
+          document.querySelector('.js-total-cost')
+          .innerHTML = '';
+          document.querySelector('.js-error-message')
+          .innerHTML = '';
+
+          if (cost < 0) {
+          document.querySelector('.js-error-message')
+            .innerHTML = 'Error: cost cannot be less than $0';
+          // If we display an error, we can use return to
+          // end this function immediately. This is called
+          // an "early return" and it makes the code cleaner
+          // because it reduces nesting / indents.
+          return;
+        }        
+
+
 
         if(cost < 40) {
           cost = cost + 10;
