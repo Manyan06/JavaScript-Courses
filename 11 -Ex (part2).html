@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EX-11 (o-u)</title>
+  </head>
+  <body>
+    <script>
+
+      let words = ['hello', 'world', 'search', 'good', 'search'];
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+          // Once we find 'search', immediately exit
+          // the loop since we want the index of the
+          // first appearance of 'search'.
+          break;
+        }
+      }
+      console.log(index);
+
+      words = ['not', 'found'];
+      index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+      console.log(index);
+
+      function findIndex(array, word) {
+        for (let i = 0; i<array.length; i++){
+          if(array [i] === word){
+            return i;
+          }          
+        }
+        return -1;
+      }
+      console.log(findIndex(['green','red','blue','red'],'red'));
+      console.log(findIndex(['green','red','blue','red'],'yellow'));
+
+
+      // 11 r
+      function removeEgg(foods) {
+        const result = [] ;
+        let eggsRemoved = 0;
+
+        for(let i=0;i<foods.length;i++){
+          // Only skip 'egg' if we removed less than of them so far.
+          if(foods[i] === 'egg' && eggsRemoved < 2){
+          // Update the number of 'egg' we have removed.
+          // This must be done before continue, otherwise,doing continue first will just skip this code.
+            eggsRemoved++;
+            continue;
+          }  
+
+          // We don't need to have an else here because
+          // the only way to reach this code is if the 
+          // if-statement above is false.
+
+          result.push(foods[i]);
+        }
+        return result;
+      }
+      
+      console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+
+      //11 t
+      // .reverse() = reverses the order of the values in the array
+      function removeEgg(foods) {
+
+      // To remove the last 2 'egg', reverse the array first.
+      const reversedFoods = foods.reverse()
+
+        const result = [] ;
+        let eggsRemoved = 0;
+
+        for(let i=0;i<reversedFoods.length;i++){
+          if(reversedFoods[i] === 'egg' && eggsRemoved < 2){
+            eggsRemoved++;
+            continue;
+          }
+          // At the end, remember to .reverse() back the result.  
+          result.push(reversedFoods[i]);          
+        }
+        return result.reverse();
+      }
+      
+      console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
