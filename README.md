@@ -10,3 +10,5 @@ Course Chapters included:
 8. Objects  
 9. Document Object Model (DOM)  
 10. HTML, CSS, and JavaScript Together  
+11. Arrays and Loops (Part 1 & 2)
+12. Advanced Functions
