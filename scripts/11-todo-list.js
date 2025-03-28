@@ -29,19 +29,17 @@ for (let i = 0;  i< todoList.length; i++) {
   const {name, dueDate} = todoObject;
 
   const html = `
-  <p>
-    ${name} ${dueDate}
-     <button onclick="
-     todoList.splice(${i}, 1); 
-     
-     //splice takes in 2 numbers
-     // 1.The index we want to remove
-     // 2.How many values to remove
+    <div>${name}</div>
+    <div>${dueDate}</div>
+    <button onclick="
+    todoList.splice(${i}, 1); 
+    
+    //splice takes in 2 numbers
+    // 1.The index we want to remove
+    // 2.How many values to remove
 
-     renderTodoList();
-     "> Delete </button>
-  </p>
-  `;
+    renderTodoList();
+    " class="delete-todo-button"> Delete </button>`;
   todoListHTML += html;
 }
 console.log(todoListHTML);
@@ -56,8 +54,14 @@ function addTodo() {
   
   const dateInputElement = document.querySelector('.js-due-date-input');
    const dueDate = dateInputElement.value;
-   
-  todoList.push(name);  // make it array
+
+  todoList.push({
+    name: name, 
+    dueDate: dueDate
+  });  // make it array
+  // or just type (shorthand property)
+  //name,
+  //dueDate });
   console.log(todoList);
 
   inputElement.value = '';
