@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <script>
+      //Functions are values
+      function greeting() {
+        console.log('Hello');
+      }  
+      greeting(); // calling/running the function
+
+      const num = 2;
+      //Functions can be saved inside a variable
+      const function1 = function() {  //Anonymous Function (function without a name)
+        console.log('hello2');
+      };
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      //We can save value(functions) in a object
+      //method (function saved inside a object)
+      const object1 = {
+        num: 2,
+        fun : function () {
+          console.log('hello3');
+        }
+      };
+      object1.fun();
+
+      //pass a value(function) into another function
+      function display(param)  {
+        console.log(param);
+      }
+      display(2);
+
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello4');
+      }); //Call back functions
+
+      //setTimeout() - allows us to run a function in the future
+      // 1. A function we want to run in the future
+      //2. How long to wait before running this function (in milliseconds)
+      //1000 milliseconds = 1 second
+
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      },3000); // 3 seconds
+
+      //Asynchronous - code WON'T WAIT for a line to finish before moving to the next line
+      //Synchronous - code WILL WAIT for a line to finish before moving to the next line
+      console.log('next line'); // this will run before the timeout function
+
+      setInterval(function() {
+        console.log('interval');
+      }, 3000); // 3 seconds
+
+      //setInterval() - it will KEEP running a function in the future
+      //1. A function we want to run in the future
+      //2. A number in milliseconds
+      //It will keep running the function every 3 seconds
+      console.log('next line2');
+
+      //clearInterval() - stops the setInterval function from running
+
+      //Another way to loop through an array
+      //Another way: .forEach() - is a preferred way to loop through an array
+      [
+        'make dinner',
+        'eat dinner',
+        'clean up'
+      ].forEach(function (value, index) {  //Function into another function
+        if (value === 'eat dinner') {
+          return; //this works like continue block in a for loop
+        }
+        console.log(value);
+        console.log(index);
+      });
+      // If we need to use break; then its better to use a for loop
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
