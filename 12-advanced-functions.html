@@ -4,6 +4,13 @@
     <title>Advanced Functions</title>
   </head>
   <body>
+
+    <!-- BEST Practice:
+      Use .addEventListener() instead of onclick="..." -->
+
+    <!-- .addEventListener() -->
+    <button onclick="" class="js-button">Click</button>
+
     <script>
       //Functions are values
       function greeting() {
@@ -83,6 +90,118 @@
         console.log(index);
       });
       // If we need to use break; then its better to use a for loop
+
+
+      //A shorter way to write a functions = ARROW FUNCTIONS
+      //mostly works the same way as a regular function
+
+
+      const regularFunction = function(param, param2) {
+        console.log('hello5');
+        return 5;
+      };
+      regularFunction();
+
+      const arrowFunction = (param, param2) => {
+        console.log('hello5');
+        return 5;
+      };
+      arrowFunction();
+
+      //calculate 
+      const oneParam = param => {
+        console.log(param+1);
+      };
+      oneParam(2); // 3
+
+      //oneLine arrow function
+      const oneLine = () => 2 + 3; 
+      console.log(oneLine()); // 5
+
+
+      //arrow function with forEach()
+      //Passing a function into another function, => use arrow functions
+      [
+        'make dinner',
+        'eat dinner',
+        'clean up'
+      ].forEach((value, index) => {  
+        if (value === 'eat dinner') {
+          return; 
+        }
+        console.log(value);
+        console.log(index);
+      });
+
+      const object = {
+        method: () => {
+
+        },
+        method() {   //Shorthand Method
+
+        }
+      };
+
+
+      //.addEventListener() - lets us run some code when we interact with the element
+
+      //1. We can add Multiple event listeners for an event
+      //2. We can remove an event listener - .removeEventListener()
+
+      const buttonElement = document.querySelector('.js-button');
+
+
+      const eventListener = ()=> {
+        console.log('click');
+      }
+      //Two parameters - 1.event 2.A function we want to run
+      buttonElement.addEventListener('click',eventListener);
+
+      buttonElement.removeEventListener('click',eventListener );
+      //1. Event 2.function we want to run
+
+      buttonElement.addEventListener('click', ()=> {
+        console.log('click2');
+      });      
+
+
+      //.filter() - 1. Create a new array[]
+      // 2. return true, => put value in array 
+      // 3. return false, => not put value in array
+
+
+      //Example: filter out negative numbers from an array
+      console.log([1, -3, 5].filter((value, index) => {
+        /*
+        if (value >= 0) {
+        return true;
+      } else {
+        return false;
+      }
+        */
+      return value >= 0;
+      }));
+
+
+      //.map() - transform an array into another array
+      //1. Create a new array[]
+      //2. Whatever we return => added to new array
+
+      console.log([1,1,3].map((value, index) => {
+        return value + 10;  // 11, 11, 13
+      }));
+
+      //.map() - works like forEach and filter
+
+
+      //more Compact way
+      console.log([1,1,3].map(value => value * 2)); // 2, 2, 6
+
+
+      //Closure concept
+      // - If a function has access to a value
+      // - It will always have access to that value
+      // - value gets packaged together (enclosed) with the function
     </script>
   </body>
 </html>

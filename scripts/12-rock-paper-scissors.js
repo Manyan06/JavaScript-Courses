@@ -1,3 +1,8 @@
+//Play the game with keyboard:
+// type 'r' => rock
+// type 'p' => paper
+// type 's' => scissors
+
 let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
@@ -19,9 +24,17 @@ if (!score) {
 let isAutoPlaying = false;
 let  intervalId ;
 
+//ARROW FUNCTION (version)
+
+//const autoPlay = () => {};
+
+//Still prefer regular 
+//1. Easier to 
+//2. Hoisting (call the function, before defining it)
+
 function autoPlay() {
   if (!isAutoPlaying) {
-     intervalId = setInterval(function() {
+     intervalId = setInterval(() =>{
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
@@ -34,6 +47,31 @@ function autoPlay() {
   //setInterval() - returns a number, so we can use this Id to stop the interval
 
 }
+
+document.querySelector('.js-rock-button')
+  .addEventListener('click', () => {
+  playGame('rock');
+});
+
+document.querySelector('.js-paper-button')
+  .addEventListener('click', () => {
+  playGame('paper');
+});
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => {
+  playGame('scissors');
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
