@@ -27,3 +27,6 @@
 
   console.log(getSecondLargest([1, 2, 3, 4, 5])); // Output: 4
   
+/// console.log(getSecondLargest([5, 5, 5, 5])); // Output: -1
+  console.log(getSecondLargest([5, 4, 3, 2, 1])); // Output: 4
+  console.log(getSecondLargest([1, 2, 3, 4, 5])); // Output: 4
