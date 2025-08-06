@@ -15,7 +15,7 @@ Course Chapters included:
 13. Amazon Clone Project - [Visit Amazon clone](https://amazonclone115.netlify.app/)
 14. Modules
 15. External Libraries
-16. Testing & Testing Frameworks
+16. Testing & Testing Frameworks (Jasmine)
 17. Object-Oriented Programming
 18. Classes
 19. Inheritance
