@@ -12,13 +12,13 @@ Course Chapters included:
 10. HTML, CSS, and JavaScript Together  
 11. Arrays and Loops (Part 1 & 2)
 12. Advanced Functions (Part 1 & 2)
-13 Amazon Clone Project
-14 Modules
-15 External Libraries
-16 Testing & Testing Frameworks
-17 Object-Oriented Programming
-18 Classes
-19 Inheritance
-20 Intro to Backend, Callbacks, Async Await
-21 Promises and fetch
-22 Async Await
+13. Amazon Clone Project - [Visit Amazon clone](https://amazonclone115.netlify.app/)
+14. Modules
+15. External Libraries
+16. Testing & Testing Frameworks
+17. Object-Oriented Programming
+18. Classes
+19. Inheritance
+20. Intro to Backend, Callbacks, Async Await
+21. Promises and fetch
+22. Async Await
